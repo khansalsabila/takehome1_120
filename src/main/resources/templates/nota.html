@@ -8,33 +8,68 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <title>Nota Pembelian</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <table border="2">
-        <tr>
-            <th>Nama sayur</th>
-            <th>Harga Perkilo</th>
-            <th>Jumlah Kilo</th>
-            <th>Harga Awal</th>
-            <th>Jumlah Diskon</th>
-            <th>Total Harga Diskon</th>
-            <th>Total bayar</th>
-            <th>Uang bayar</th>
-            <th>Uang kembali</th>
+        <style>
+            h1 {
+                text-align: center;
+                color: #990066;
+            }
+            h2 {
+                text-align: center;
+            }
             
-        </tr>
-        
-        
-            <td th:text="${name}"></td>
-            <td th:text="${price}"></td>
-            <td th:text="${kilo}"></td>
-            <td th:text="${total10}"></td>
-            <td th:text="${disc}"></td>
-            <td th:text="${hargadisc}"></td>
-            <td th:text="${tbayar}"></td>
-            <td th:text="${jumlah}"></td>
-            <td th:text="${kembali}"></td>
-        </tr>
-        
-          
-    </table>
+             .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #990066;
+            color: white;
+            text-align: center;
+            
+            }
+        </style>
+    </head>
+   <body>
+        <h1>Toko Mainan Ceria</h1>
+        <hr>
+        <h2>Nota Pembayaran</h2>
+            <table border="1" align="center">
+                <thead>
+                    <tr>
+                        <td>Nama Mainan</td>
+                        <td>Jumlah Mainan</td>
+                        <td>Harga Mainan</td>
+                        <td>Total Mainan</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td th:text="${Nama}"></td>
+                        <td th:text="${Barang}"></td><!-- comment -->
+                        <td th:text="${Harga}"></td>
+                        <td th:text="${Total}"></td>
+                    </tr>
+
+                    <tr>
+                    <td colspan="4" align="center"> 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Diskon</td>
+                    <td colspan="3" th:text="${TotalDiskon}"></td>
+                </tr>
+
+                <tr>
+                    <td>Total</td><!-- comment -->
+                    <td colspan="3" th:text="${Diskon}"></td>
+                </tr>
+                </tbody>
+            </table>
+    </body>
+    <div class="footer">
+        <p>Lathifah Khansa Salsabila (20200140120)</p>
+    </div>
+    </body>
 </html>

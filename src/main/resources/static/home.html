@@ -8,21 +8,39 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <title>Toko Sukses</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <style>
+            h1 {
+                text-align: center;
+                color: #990066;
+            }
+            h2 {
+                text-align: center;
+            }
+            
+             .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #990066;
+            color: white;
+            text-align: center;
+            
+            }
+        </style>
     </head>
     <body>
-        <div>Daftar pembelian</div>
+         <h1> Toko Mainan Ceria</h1>
         <hr>
-        
-        <form action="/bayar">
-            Nama Sayur     : <input type="text" name="var_namasayur"><br>
-            Harga Sayur    : <input type="text" name="var_hargakilo"><br>
-            Jumlah Beli   : <input type="text" name="var_jumlahbeli"><br>
-            uang bayar     : <input type="text" name="var_bayarsayur" ><br>
-                <button type="submit"> Beli </button>
-                
-
-                <div> lathifah Khansa Salsabila</div>
-                <hr>
+        <h3> DAfTAR BELANJAAN</h3>
+        <form action="/submit">
+            Nama Mainan : <input type="text" name="Nama_mainan"><P/>
+            Harga Mainan : <input type="number" name="Harga_mainan"><p/>
+            Jumlah Pembelian : <input type="number" name="Jumlah_mainan"><p/>
+            <button type="submit">BELI</button>
         </form>
     </body>
+    <div class="footer">
+        <p>Lathifah Khansa Salsabila (20200140120)</p>
+    </div>
 </html>
