@@ -17,11 +17,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DiskonController {
     
     @RequestMapping("/bayar")
-    public String notamakanan(HttpServletRequest data, Model makanan){
+    public String notamakanan(HttpServletRequest data, Model sayur){
+                
+        Menucamilan Mc = new Menucamilan();
         
-        Menumakanan Mm = new Menumakanan();
+        String nsayur = data.getParameter("var_namasayur");
+        String hsayur = data.getParameter("var_hargakilo");
+        String jsayur = data.getParameter("var_jumlahbeli");
+        String uangbayar = data.getParameter("var_bayarsayur");
         
-        String nmakanan = data.getParameter(string:"var_namamakanan"
+        
+        Double hargasayur = Mc.getharga(hsayur);
+        Double jumlahsayur = Mc.getjumlah(jsayur);
+        Double jumlahbayar = Mc.getjumlahbayar(hargasayur, jumlahsayur);
+        String disc = Mc.getdisc(jumlahbayar);
+        Double hargadiskon = Mc.gethargadisc(jumlahbayar, Integer.valueOf(disc));
+        Double totalbayar =  Mc.gettotalbayar(jumlahbayar, hargadiskon);
+        Double pembayaran = Mc.getpembayaran(uangbayar);
+        Double kembalian = Mc.getkembalian(totalbayar,pembayaran);
+        Mc.gettdiskon(totalbayar, jumlahbayar, hargasayur, Integer.valueOf(disc));
+        
+        
+        
+        sayur.addAttribute("name",nsayur);
+        sayur.addAttribute("price",hsayur);
+        sayur.addAttribute("kilo",jsayur);
+        sayur.addAttribute("tbayar",totalbayar);
+        sayur.addAttribute("hargadisc",hargadiskon);
+        sayur.addAttribute("disc",disc);
+        sayur.addAttribute("total10",jumlahbayar);
+        sayur.addAttribute("jumlah",pembayaran);
+        sayur.addAttribute("kembali",kembalian);
+        return "camilan";
     }
     
 }
